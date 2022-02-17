@@ -30,5 +30,7 @@ Strings
 Programming
 -----------
 
+- `arrayConstructor` -- mixin class that provides a constructor that behaves 
+  like `zeros`, `ones`, etc.
 - `partial` -- quick function closures, inspired by Python's `functools.partial`
 - `silentWarningWrapper` -- wrap a function to silence a warning
