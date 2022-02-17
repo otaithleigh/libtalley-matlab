@@ -23,6 +23,7 @@ Plotting
 Strings
 -------
 
+- `sentencecase`, `titlecase` -- additional string casing functions
 - `slugify` -- make strings safe for use as paths/URIs
 - `uuid` -- get a random-ish UUID
 - `writestring` -- write string(s) to file
