@@ -18,6 +18,7 @@ Plotting
   normal lines
 - `fig2raster` -- wrapper around `export_fig` to ease converting figures to
   raster outputs
+- `newgrid` -- wrapper around `tiledlayout` for producing styled figures
 
 Strings
 -------
