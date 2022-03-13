@@ -25,8 +25,8 @@ if fid == -1
 end
 
 stringToWrite = join(s, options.Delimiter);
-if options.ForceFinalNewline && ~endsWith(stringToWrite, "\n")
-    stringToWrite = append(stringToWrite, "\n");
+if options.ForceFinalNewline && ~endsWith(stringToWrite, newline)
+    stringToWrite = append(stringToWrite, newline);
 end
 
 try
