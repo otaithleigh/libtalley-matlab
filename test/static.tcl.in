@@ -1,0 +1,52 @@
+#===============================================================================
+# Static load-controlled analysis input script
+# Generated %(timestamp)s
+#
+# Units: %(units.force)s, %(units.length)s, %(units.time)s
+#===============================================================================
+%(dependencies)s
+%(imports)s
+
+#-------------------------------------------------------------------------------
+# Model script
+#-------------------------------------------------------------------------------
+%(model_script)s
+
+#-------------------------------------------------------------------------------
+# Applied loads
+#-------------------------------------------------------------------------------
+timeSeries Linear %(timeseries.tag)d
+pattern Plain %(pattern.tag)d %(timeseries.tag)d {
+%(pattern.loads)s
+}
+
+#-------------------------------------------------------------------------------
+# Recorders
+#-------------------------------------------------------------------------------
+%(recorders)s
+
+record
+
+
+#===============================================================================
+# Run the analysis!
+#===============================================================================
+constraints %(constraints)s
+numberer %(numberer)s
+system %(system)s
+test %(test)s
+algorithm %(algorithm)s
+%(load_control)s
+analysis Static
+
+set name {[staticAnalysis]}
+
+while { [getTime] < 1.0 } {
+    set err [analyze 1]
+    if { $err != 0 } {
+        puts "$name ERROR: Analysis failed to converge"
+        exit 2
+    }
+}
+puts "$name Analysis successful. Terminating."
+exit 1
