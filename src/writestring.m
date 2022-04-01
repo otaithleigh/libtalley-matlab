@@ -23,14 +23,14 @@ arguments
     options.Mode (1,1) string {mustBeMember(options.Mode, ["a", "w"])} = "w"
 end
 
-fid = fopen(filename, options.Mode);
-if fid == -1
-    error('Could not open %s for writing', filename)
-end
-
 stringToWrite = join(s, options.Delimiter);
 if options.ForceFinalNewline && ~endsWith(stringToWrite, newline)
     stringToWrite = append(stringToWrite, newline);
+end
+
+fid = fopen(filename, options.Mode);
+if fid == -1
+    error('Could not open %s for writing', filename)
 end
 
 try
