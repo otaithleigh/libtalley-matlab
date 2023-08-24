@@ -6,7 +6,7 @@ function s2 = titlecase(s1)
         s1 string
     end
 
-    s2 = arrayfun(@titlecase_single_string, s1);    
+    s2 = arrayfun(@titlecase_single_string, s1);
 end
 
 function s2 = titlecase_single_string(s1)

@@ -23,7 +23,7 @@ function tf = isclose(a, b, params)
 %   ----------
 %   a, b : double
 %       Matrices to check.
-%   
+%
 %   Keyword Parameters
 %   ------------------
 %   RelTol

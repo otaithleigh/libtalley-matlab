@@ -1,7 +1,7 @@
 function wrapped = silentWarningWrapper(func, warnid)
 %silentWarningWrapper  Wrap a function to run while suppressing warning
 %
-%   WRAPPED = silentWarningWrapper(FUNC, WARNID) returns a new function 
+%   WRAPPED = silentWarningWrapper(FUNC, WARNID) returns a new function
 %       WRAPPED that takes the same inputs and outputs as FUNC, but
 %       suppresses the warning specified by WARNID when called. The previous
 %       warning state is restored when WRAPPED returns (or errors out).
