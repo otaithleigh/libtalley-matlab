@@ -29,16 +29,10 @@ if options.ForceFinalNewline && ~endsWith(stringToWrite, newline)
 end
 
 fid = fopen(filename, options.Mode);
+cleanup = onCleanup(@()fclose(fid));
 if fid == -1
     error('Could not open %s for writing', filename)
 end
-
-try
-    fprintf(fid, '%s', stringToWrite);
-catch err
-    fclose(fid);
-    rethrow(err);
-end
-fclose(fid);
+fprintf(fid, '%s', stringToWrite);
 
 end

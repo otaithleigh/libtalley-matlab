@@ -14,13 +14,8 @@ function wrapped = silentWarningWrapper(func, warnid)
 
 function varargout = wrapped_func(varargin)
     warnstate = warning('off', warnid);
-    try
-        [varargout{1:nargout}] = func(varargin{:});
-    catch err
-        warning(warnstate);
-        rethrow(err);
-    end    
-    warning(warnstate);
+    cleanup = onCleanup(@()warning(warnstate));
+    [varargout{1:nargout}] = func(varargin{:});
 end
 
 wrapped = @wrapped_func;
