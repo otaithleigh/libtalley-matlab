@@ -1,3 +1,9 @@
+A grab bag of utility functions, many of which were written after spending some
+time coding in Python and getting used to some niceties there.
+
+Requires MATLAB R2019b or later.
+
+
 Numeric
 -------
 
